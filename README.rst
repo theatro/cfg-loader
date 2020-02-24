@@ -1,9 +1,9 @@
-.. image:: https://travis-ci.org/nmvalera/cfg-loader.svg?branch=master
-    :target: https://travis-ci.org/nmvalera/cfg-loader
+.. image:: https://travis-ci.org/theatro/cfg-loader.svg?branch=master
+    :target: https://travis-ci.org/theatro/cfg-loader
     :alt: Build Status
 
-.. image:: https://codecov.io/gh/nmvalera/cfg-loader/branch/master/graph/badge.svg
-    :target: https://codecov.io/gh/nmvalera/cfg-loader
+.. image:: https://codecov.io/gh/theatro/cfg-loader/branch/master/graph/badge.svg
+    :target: https://codecov.io/gh/theatro/cfg-loader
     :alt: Coverage
 
 .. image:: https://readthedocs.org/projects/cfg-loader/badge/?version=stable
@@ -29,7 +29,7 @@ Main features
 Requirements
 ~~~~~~~~~~~~
 
-- Python>=3.5
+- Python>=3.6
 
 A simple example
 ~~~~~~~~~~~~~~~~
