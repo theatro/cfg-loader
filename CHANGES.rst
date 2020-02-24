@@ -8,6 +8,29 @@ Version 0.3.0
 
 Unreleased
 
+Version 0.2.3
+-------------
+
+Released on August 13th 2018
+
+Chore
+
+- Update marshmallow dependencies
+
+Version 0.2.2
+-------------
+
+Released on July 27th 2018
+
+Version 0.2.1
+-------------
+
+Unreleased
+
+Fix
+
+- Schema: update ExtraFieldsSchema handles fields declared with ``data_key``
+
 Version 0.2.0
 -------------
 
