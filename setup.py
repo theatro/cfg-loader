@@ -47,7 +47,7 @@ def find_version(file):
 setup(
     name='theatro-cfg-loader',
     version=find_version('cfg_loader/__init__.py'),
-    license=read('LICENSE'),
+    license="BSD-3-Clause",
     url='https://github.com/nmvalera/cfg-loader',
     author='Nicolas Maurice',
     author_email='nicolas.maurice.valera@gmail.com',
@@ -55,6 +55,7 @@ setup(
     maintainer_email='cognifloyd@gmail.com',
     description='A library that allows to easily load configuration settings.',
     long_description=read('README.rst'),
+    long_description_content_type='text/x-rst',
     packages=find_packages(),
     install_requires=[
         'marshmallow>=3.0.0',
