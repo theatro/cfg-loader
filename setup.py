@@ -45,7 +45,7 @@ def find_version(file):
 
 
 setup(
-    name='Cfg-Loader',
+    name='theatro-cfg-loader',
     version=find_version('cfg_loader/__init__.py'),
     license=read('LICENSE'),
     url='https://github.com/nmvalera/cfg-loader',
