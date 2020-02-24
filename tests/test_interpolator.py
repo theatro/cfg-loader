@@ -56,7 +56,7 @@ def _test_substitution_error_if_unset():
 
     assert template.substitute({'VARIABLE': 'value'}) == 'value'
     assert template.substitute({'VARIABLE': ''}) == ''
-    with pytest.raises(UnsetRequiredSubstitution, message='err') as e:
+    with pytest.raises(UnsetRequiredSubstitution) as e:
         template.substitute({})
     assert str(e.value) == 'test error'
 
