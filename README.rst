@@ -23,13 +23,13 @@ Main features
 - substitution of environment variables in input data (following `docker compose variable substitution syntax`_)
 - configuration loading from .yaml file
 
-.. _`marshmallow`: https://github.com/marshmallow-code/marshmallow
-.. _`docker compose variable substitution syntax`: https://docs.docker.com/compose/compose-file/#variable-substitution
+.. _marshmallow: https://github.com/marshmallow-code/marshmallow
+.. _docker compose variable substitution syntax: https://docs.docker.com/compose/compose-file/#variable-substitution
 
 Requirements
 ~~~~~~~~~~~~
 
-- Python>=3.6
+Python>=3.6
 
 A simple example
 ~~~~~~~~~~~~~~~~
