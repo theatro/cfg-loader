@@ -28,15 +28,15 @@ jobs:
     - stage: test
       python: 3.7
       env: TOXENV=docs
-    #- stage: release
-    #  python: 3.7
-    #  install: skip
-    #  script: skip
-    #  deploy:
-    #    provider: pypi
-    #    user: theatro
-    #    distributions: sdist bdist_wheel
-    #    on:
-    #      tags: true
-    #    password:
-    #      secure:
+    - stage: release
+      python: 3.7
+      install: skip
+      script: skip
+      deploy:
+        provider: pypi
+        user: "__token__"
+        distributions: sdist bdist_wheel
+        on:
+          tags: true
+        password:
+          secure: "Ui8iuKcgAcSGIxrITA4E2tkHCINYJkLNDtV+GlK1L3cTMIe+zC8kMczUT7VSTZersuCK48Ej8RUvIFk0TyXjnr2hgmrpqUBBmS+RT9K50oeatWfEFaIk0AtwLj0eLSholqbZUHuuzRifX/rt4PQRXZAHKrwB3DB+Cwbb6K1xXEJf/ak+LapLolzbi/975Szk1yu1OmsjaRacQxqVeLLMjwCCSxHpFBg6DF6vmMlzvOIu5fRTK/oosj+6x9+kBWhurO++/+Joy36mXEYuNemKR/nfItHsZGwSHfewVgrkaNvYVlj59Vf3tXr4Nlq/m8mPYx1Zjno2eb7DYTw3FXTG2x+rtC6SN6arLI5aQTf7peIWrHRL+MwBi18JLuCpLzLaHAlPyIb+iqYbHkG9EOTdGHX59OXcF0Z3m4GYiaqf3rm0/v3dbzh4VLnrSTRi969qiLO5gmPy5Nu5HXjDL+2s62PqNjrX06e9QVQo+hmKCh3DzL/Hvy3YrNzVxg3mWXN83BgDPX/P7I4F86iHGORjRGS9H9CzUbHHxrmiPjhQLgeYmzU3dNkT2YzDE4xP6ewCnYvAMFSaO6A+s6nAgj4eAVT7zhTSdn3znGl2akzWQj7EQGXc9LmDuJYviTMAhO2Z0NZdwLGEjHjsunwXH/M11E5cy6pJtOdSp2z8AOkt/Yw="
