@@ -57,7 +57,7 @@ setup(
     long_description=read('README.rst'),
     packages=find_packages(),
     install_requires=[
-        'marshmallow>=3.0.0b11',
+        'marshmallow>=3.0.0',
         'PyYAML>=3.12',
     ],
     extras_require={

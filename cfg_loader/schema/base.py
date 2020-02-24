@@ -7,9 +7,10 @@
     :copyright: Copyright 2017 by ConsenSys France.
     :license: BSD, see :ref:`license` for more details.
 """
+import typing
 
 import marshmallow
-from marshmallow import Schema, post_load, INCLUDE
+from marshmallow import Schema, post_load, INCLUDE, types
 
 from ..exceptions import ValidationError
 from ..fields import UnwrapNested
@@ -36,7 +37,17 @@ class InterpolatingSchema(Schema):
                                                      substitution_template=self._substitution_template)
         super().__init__(*args, **kwargs)
 
-    def load(self, data, many=None, partial=None, unknown=None):
+    def load(
+        self,
+        data: typing.Union[
+            typing.Mapping[str, typing.Any],
+            typing.Iterable[typing.Mapping[str, typing.Any]],
+        ],
+        *,
+        many: bool = None,
+        partial: typing.Union[bool, types.StrSequenceOrSet] = None,
+        unknown: str = None
+    ):
         """Deserialize a data structure to an object defined by this Schema’s fields
 
         :param data: Data object to load from
@@ -55,7 +66,7 @@ class InterpolatingSchema(Schema):
             data = self.interpolator.interpolate_recursive(data)
 
         try:
-            return super().load(data, many, partial, unknown)
+            return super().load(data, many=many, partial=partial, unknown=unknown)
         except marshmallow.exceptions.ValidationError as e:
             raise ValidationError(e.normalized_messages())
 
@@ -72,7 +83,7 @@ class UnwrapNestedSchema(Schema):
     """Schema class that can unwrap nested fields"""
 
     @post_load
-    def unwrap_nested_fields(self, data):
+    def unwrap_nested_fields(self, data, **kwargs):
         unwrap_nested = {}
         for field, value in self.fields.items():
             if isinstance(value, UnwrapNested):
