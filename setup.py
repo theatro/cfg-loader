@@ -29,12 +29,13 @@ setup(
     url='https://github.com/nmvalera/cfg-loader',
     author='Nicolas Maurice',
     author_email='nicolas.maurice.valera@gmail.com',
-    maintainer='ConsenSys France',
+    maintainer='Jacob Floyd',
+    maintainer_email='cognifloyd@gmail.com',
     description='A library that allows to easily load configuration settings.',
     long_description=read('README.rst'),
     packages=find_packages(),
     install_requires=[
-        'marshmallow==3.0.0b11',
+        'marshmallow>=3.0.0b11',
         'PyYAML>=3.12',
     ],
     extras_require={
@@ -63,8 +64,8 @@ setup(
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
     ],
     test_suite='tests'
 )
