@@ -67,8 +67,10 @@ class InterpolatingSchema(Schema):
 
         try:
             return super().load(data, many=many, partial=partial, unknown=unknown)
-        except marshmallow.exceptions.ValidationError as e:
-            raise ValidationError(e.normalized_messages())
+        except marshmallow.ValidationError as e:
+            raise ValidationError(
+                e.normalized_messages(), data=e.data, valid_data=e.valid_data
+            )
 
 
 class ExtraFieldsSchema(Schema):

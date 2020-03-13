@@ -7,6 +7,7 @@
     :copyright: Copyright 2017 by ConsenSys France.
     :license: BSD, see :ref:`license` for more details.
 """
+import marshmallow
 
 
 class ConfigLoaderError(Exception):
@@ -25,7 +26,8 @@ class LoadingError(ConfigLoaderError):
     """Error raised when loading the configuration file"""
 
 
-class ValidationError(ConfigLoaderError):
+# This must extend the marshmallow error, or marshmallow will swallow nested errors.
+class ValidationError(ConfigLoaderError, marshmallow.ValidationError):
     """Error raised when marshmallow raise a validation error at deserialization"""
 
 
