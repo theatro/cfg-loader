@@ -68,7 +68,7 @@ def test_yaml_config_loader(config_path):
 
 
 @pytest.mark.parametrize('env_vars', [[('VARIABLE', BASE_CONFIG_PATH)]])
-def test_yaml_config_loader_from_env_var(config_path):
+def test_yaml_config_loader_from_env_var(config_path, env_vars):
     config_loader = YamlConfigLoader(ConfigSchemaTest,
                                      substitution_mapping={'PATH': 'folder/file', 'SECRET': 'my-secret'},
                                      config_file_env_var='VARIABLE')
@@ -85,7 +85,7 @@ def test_yaml_config_loader_from_env_var(config_path):
 
 
 @pytest.mark.parametrize('env_vars', [[('VARIABLE', None)]])
-def test_yaml_config_loader_no_path(config_path):
+def test_yaml_config_loader_no_path(config_path, env_vars):
     config_loader = YamlConfigLoader(ConfigSchemaTest,
                                      substitution_mapping={'PATH': 'folder/file', 'SECRET': 'my-secret'},
                                      config_file_env_var='VARIABLE')
@@ -96,7 +96,7 @@ def test_yaml_config_loader_no_path(config_path):
 
 
 @pytest.mark.parametrize('env_vars', [[('VARIABLE', None)]])
-def test_yaml_config_loader_with_default_path(config_path):
+def test_yaml_config_loader_with_default_path(config_path, env_vars):
     config_loader = YamlConfigLoader(ConfigSchemaTest,
                                      substitution_mapping={'PATH': 'folder/file', 'SECRET': 'my-secret'},
                                      config_file_env_var='VARIABLE',
